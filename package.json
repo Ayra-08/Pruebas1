@@ -1,5 +1,5 @@
 { 
-    "name": "Ai Hoshino - MD",
+    "name": "Runa Bot",
     "version": "1.0.0",
     "description": "Simple WhatsApp Bot Multi Device",
     "main": "index.js",
@@ -23,16 +23,16 @@
         "multi-device",
         "baileys-md"
     ],
-    "homepage": "https://github.com/NakanoTeam/Ai-Hoshino",
+    "homepage": "https://github.com/Ayra-08/Pruebas1",
     "author": {
-        "name": "おDaniel"
+        "name": "Daniel"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/NakanoTeam/Ai-Hoshino.git"
+        "url": "https://github.com/Ayra-08/Pruebas1"
     },
     "bugs": {
-        "url": "https://github.com/NakanoTeam/Ai-Hoshino/issues"
+        "url": "https://github.com/Ayra-08/Pruebas1/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
