@@ -10,10 +10,10 @@ import moment from "moment-timezone"
 //⊱ ━━━━.⋅ Añada los numeros a ser Propietario/a ⋅.━━━ ⊰  
 
 global.owner = [
-  ['5218132588591', 'おDanịel.xyz⁩', true],
-  ['5218139760662'],
-  ['5218261009198'],
-  ['50662333781']
+  ['51955918117', 'Daniel⁩', true],
+  ['51955918117'],
+  ['59896392749'],
+  ['51967647592']
 ] //Numeros de owner 
 
 //━━━━━━━━━━━ ฅ^•ﻌ•^ฅ ━━━━━━━━━━━
@@ -24,11 +24,11 @@ global.prems = []
 //━━━━━━━━━━━ ฅ^•ﻌ•^ฅ ━━━━━━━━━━━
 
 global.packname = ''
-global.author = '{\n "bot": {\n   "name": "Ai Hoshino",\n     "author": "おDaniel",\n   "status_bot": "active"\n }\n}'
+global.author = '{\n "bot": {\n   "name": "Runa Bot",\n     "author": "Daniel",\n   "status_bot": "active"\n }\n}'
 global.desc = 'Simple WhatsApp Bot Multi Device'
-global.namebot = '© Ai Hoshino - MD / Nakano - Team'
-global.wait = '*↻ Espera soy lenta. . .*'
-global.gcname = 'Ai Hoshino - MD'
+global.namebot = '© Runa Bot | By Daniel x Ayra'
+global.wait = '*↻ Espere un momento por favor soy algo lenta ....*'
+global.gcname = 'Runa Bot'
 global.wm = ''
 
 //━━━━━━━━━━━ ฅ^•ﻌ•^ฅ ━━━━━━━━━━━
@@ -57,13 +57,13 @@ global.group = 'https://chat.whatsapp.com/CqdWTXmS702JD31SQzr0Ph'
 
 //━━━━━━━━━━━ ฅ^•ﻌ•^ฅ ━━━━━━━━━━━
 
-global.adanime = `🌸 | Anime By Ai Hoshino - MD 🈴` 
-global.addescargas = `📤 | Descargas By Ai Hoshino - MD 🌸`
-global.adimagen = `🌅 | Imágenes By Ai Hoshino - MD 🌿` 
+global.adanime = `🌸 | Anime  🈴` 
+global.addescargas = `📤 | Descargas 🌸`
+global.adimagen = `🌅 | Imágenes  🌿` 
 global.adyoutube = `🍁 | Descargas de YouTube 📤` 
-global.adsticker = `🏞️ | Stickers By Ai Hoshino - MD 🌺` 
-global.adsearch  = `🔎 | Busquedas By Ai Hoshino - MD 🐢` 
-global.adnsfw = `🔞 | Nsfw By Ai Hoshino - MD ⭐`
+global.adsticker = `🏞️ | Stickers  🌺` 
+global.adsearch  = `🔎 | Busquedas  🐢` 
+global.adnsfw = `🔞 | Nsfw  ⭐`
 
 //━━━━━━━━━━━ ฅ^•ﻌ•^ฅ ━━━━━━━━━━━
 
