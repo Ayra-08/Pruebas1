@@ -7,7 +7,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
   let chat = global.db.data.chats[m.chat]
 
   if (chat.welcome && m.messageStubType == 27) {
-    let welcome = `┌─★ *Ai Hoshino - MD* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
+    let welcome = `┌─★ *Runa Bot* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
     
     await conn.sendMessage(
     m.chat,
@@ -30,13 +30,12 @@ export async function before(m, {conn, participants, groupMetadata}) {
       },
     },
     {
-      quoted: estilo,
     }
   )
   }
   
 if (chat.welcome && m.messageStubType == 28) {
-    let bye = `┌─★ *Ai Hoshino - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+    let bye = `┌─★ *Runa Bot* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
 
     await conn.sendMessage(
     m.chat,
@@ -59,13 +58,12 @@ if (chat.welcome && m.messageStubType == 28) {
       },
     },
     {
-      quoted: estilo,
     }
   )
   }
   
   if (chat.welcome && m.messageStubType == 32) {
-    let kick = `┌─★ *Ai Hoshino - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+    let kick = `┌─★ *Runa Bot* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
 
     await conn.sendMessage(
     m.chat,
@@ -88,7 +86,6 @@ if (chat.welcome && m.messageStubType == 28) {
       },
     },
     {
-      quoted: estilo,
     }
   )
 
