@@ -31,8 +31,6 @@ export async function before(m, {conn, participants, groupMetadata}) {
     },
     {
     }
-  )
-  }
   
 if (chat.welcome && m.messageStubType == 28) {
     let bye = `┌─★ *Runa Bot* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
@@ -59,8 +57,6 @@ if (chat.welcome && m.messageStubType == 28) {
     },
     {
     }
-  )
-  }
   
   if (chat.welcome && m.messageStubType == 32) {
     let kick = `┌─★ *Runa Bot* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
@@ -87,6 +83,5 @@ if (chat.welcome && m.messageStubType == 28) {
     },
     {
     }
-  )
 
 }}
