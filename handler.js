@@ -563,9 +563,10 @@ let msg = {
         group: '*Este comando se utiliza en grupos*',
         private: '*Este comando solo se usa en chat privado del bot*',
         admin: '*Este comando solo se utiliza siendo admin del grupo*',
+	unreg: '*para usar este comando debes estar *Registrado.*',
         botAdmin: '*Este comando solo se utiliza cuando el bot es admin*'
     }[type]
-if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://i.postimg.cc/B6CDnZG3/wonder-egg-priority-icons.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://i.postimg.cc/B6CDnZG3/wonder-egg-priority-icons.jpg`)).buffer(), sourceUrl: 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33', mediaType: 1 }}}, { quoted: m })
+if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://telegra.ph/file/09e425d49f2b7ac83178e.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://telegra.ph/file/09e425d49f2b7ac83178e.jpg`)).buffer(), sourceUrl: 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33', mediaType: 1 }}}, { quoted: m })
 } 
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
