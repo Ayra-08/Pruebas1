@@ -198,9 +198,16 @@ async function connectionUpdate(update) {
     global.timestamp.connect = new Date;
   }
   
-  if (global.db.data == null) loadDatabase()
+  if (global.db.data == null) loadDatabase();
+if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
+if (opcion == '1' || methodCodeQR) {
+    console.log(chalk.yellow(' Escanea el código QR solo dura 50 segundos.'));
+ }}
+if (connection == 'open') {
+console.log(chalk.yellowBright('\n╭━─━━─━━─━─≪  🈴  ≫─━─━━─━━─━╮\n│\n│Conectado correctamente a WhatsApp ✅.\n│\n╰━─━━━─━━─━─≪ 🈴 ≫─━─━━─━━━─━╯\n'))
+conn.fakeReply('51955918117@s.whatsapp.net', '🐱 !𝖧𝖾𝗒 𝖢𝗋𝖾𝖺𝖽𝗈𝗋 𝖬𝖾 𝖤 𝖢𝗈𝗇𝖾𝖼𝗍𝖺𝖽𝗈 𝖢𝗈𝗆𝗈 𝖴𝗇 𝖭𝗎𝖾𝗏𝗈 𝖡𝗈𝗍! 🐈', '0@s.whatsapp.net', '🦋 𝚂𝙾𝚈 𝚃𝚄 𝙱𝙾𝚃 𝙾𝙵𝙲 🐱', '0@s.whatsapp.net')
+ await conn.groupAcceptInvite('DV7fEXPjgTtAIQXFZSIJhP');
 }
-
 
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
