@@ -74,22 +74,20 @@ global.loadDatabase = async function loadDatabase() {
 }
 loadDatabase()
 
-//Sesion
-global.authFolder = `KrizDavidz`
-const { state, saveCreds } = await useMultiFileAuthState(global.authFolder)
-const { version, isLatest } = await fetchLatestBaileysVersion()
-const connectionOptions = {
-    version,
-    logger: pino({
-        level: 'silent'
-    }),
-    printQRInTerminal: true,
-    browser: ['Ai Ohto', 'Safari', '3.1.0'], 
-    auth: {
-        creds: state.creds,
-        keys: makeCacheableSignalKeyStore(state.keys, pino().child({
-            level: 'silent',
-            stream: 'store'
+//Nuevo metodo de iniciar sesión
+global.authFile = `RunaSession`;
+const {state, saveState, saveCreds} = await useMultiFileAuthState(global.authFile);
+const msgRetryCounterMap = (MessageRetryMap) => { };
+const msgRetryCounterCache = new NodeCache()
+const {version} = await fetchLatestBaileysVersion();
+let phoneNumber = global.botnumber
+
+const methodCodeQR = process.argv.includes("qr")
+const methodCode = !!phoneNumber || process.argv.includes("code")
+const MethodMobile = process.argv.includes("mobile")
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
+
         }))
     }
 }
