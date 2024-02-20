@@ -165,6 +165,12 @@ setTimeout(async () => {
             console.log(chalk.black(chalk.bgGreen(`Su código de emparejamiento: `)), chalk.black(chalk.white(codigo)))
         }, 3000)
 }}
+}
+
+conn.isInit = false;
+conn.well = false;
+conn.logger.info(`[ 🦋 ] Cargando...\n`);
+
 /* Clear */
 async function clearTmp() {
   const tmp = [tmpdir(), join(__dirname, './tmp')]
