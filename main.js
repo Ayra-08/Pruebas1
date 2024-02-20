@@ -208,7 +208,37 @@ console.log(chalk.yellowBright('\n╭━─━━─━━─━─≪  🈴  �
 conn.fakeReply('51955918117@s.whatsapp.net', '🐱 !𝖧𝖾𝗒 𝖢𝗋𝖾𝖺𝖽𝗈𝗋 𝖬𝖾 𝖤 𝖢𝗈𝗇𝖾𝖼𝗍𝖺𝖽𝗈 𝖢𝗈𝗆𝗈 𝖴𝗇 𝖭𝗎𝖾𝗏𝗈 𝖡𝗈𝗍! 🐈', '0@s.whatsapp.net', '🦋 𝚂𝙾𝚈 𝚃𝚄 𝙱𝙾𝚃 𝙾𝙵𝙲 🐱', '0@s.whatsapp.net')
  await conn.groupAcceptInvite('DV7fEXPjgTtAIQXFZSIJhP');
 }
-
+let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
+if (reason == 405) {
+await fs.unlinkSync("./RunatSession/" + "creds.json")
+console.log(chalk.bold.redBright(`[ ⚠ ] Conexión replazada, Por favor espere un momento me voy a reiniciar...\nSi aparecen error vuelve a iniciar con : npm start`)) 
+process.send('reset')}
+if (connection === 'close') {
+    if (reason === DisconnectReason.badSession) {
+        conn.logger.error(`[ ⚠ ] Sesión incorrecta, por favor elimina la carpeta ${global.authFile} y escanea nuevamente.`);
+        //process.exit();
+    } else if (reason === DisconnectReason.connectionClosed) {
+        conn.logger.warn(`[ ⚠ ] Conexión cerrada, reconectando...`);
+        await global.reloadHandler(true).catch(console.error);
+    } else if (reason === DisconnectReason.connectionLost) {
+        conn.logger.warn(`[ ⚠ ] Conexión perdida con el servidor, reconectando...`);
+        await global.reloadHandler(true).catch(console.error);
+    } else if (reason === DisconnectReason.connectionReplaced) {
+        conn.logger.error(`[ ⚠ ] Conexión reemplazada, se ha abierto otra nueva sesión. Por favor, cierra la sesión actual primero.`);
+        //process.exit();
+    } else if (reason === DisconnectReason.loggedOut) {
+        conn.logger.error(`[ ⚠ ] Conexion cerrada, por favor elimina la carpeta ${global.authFile} y escanea nuevamente.`);
+        //process.exit();
+    } else if (reason === DisconnectReason.restartRequired) {
+        conn.logger.info(`[ ⚠ ] Reinicio necesario, reinicie el servidor si presenta algún problema.`);
+        await global.reloadHandler(true).catch(console.error);
+    } else if (reason === DisconnectReason.timedOut) {
+        conn.logger.warn(`[ ⚠ ] Tiempo de conexión agotado, reconectando...`);
+        await global.reloadHandler(true).catch(console.error);
+    } else {
+        conn.logger.warn(`[ ⚠ ] Razón de desconexión desconocida. ${reason || ''}: ${connection || ''}`);
+        await global.reloadHandler(true).catch(console.error);
+    }
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
 
