@@ -371,10 +371,41 @@ async function _quickTest() {
   if (!s.convert && !s.magick && !s.gm) conn.logger.warn('Stickers may not work without imagemagick if libwebp on ffmpeg doesnt isntalled (pkg install imagemagick)')
 }
 
-_quickTest()
-  .then(() => conn.logger.info('Prueba rÃ¡pida realizado!'))
-  .catch(console.error)
-
+setInterval(async () => {
+  if (stopped === 'close' || !conn || !conn.user) return;
+  const a = await clearTmp();
+console.log(chalk.cyanBright(`\n▣───────────[ 𝙰𝚄𝚃𝙾𝙲𝙻𝙴𝙰𝚁TMP ]──────────────···\n│\n▣─❧ 𝙰𝚁𝙲𝙷𝙸𝚅𝙾𝚂 𝙴𝙻𝙸𝙼𝙸𝙽𝙰𝙳𝙾𝚂 ✅\n│\n▣───────────────────────────────────────···\n`));
+}, 180000);
+setInterval(async () => {
+  if (stopped === 'close' || !conn || !conn.user) return;
+  await purgeSession();
+console.log(chalk.cyanBright(`\n▣────────[ AUTOPURGESESSIONS ]───────────···\n│\n▣─❧ ARCHIVOS ELIMINADOS ✅\n│\n▣────────────────────────────────────···\n`));
+}, 1000 * 60 * 60);
+setInterval(async () => {
+  if (stopped === 'close' || !conn || !conn.user) return;
+  await purgeSessionSB();
+console.log(chalk.cyanBright(`\n▣────────[ AUTO_PURGE_SESSIONS_SUB-BOTS ]───────────···\n│\n▣─❧ ARCHIVOS ELIMINADOS ✅\n│\n▣────────────────────────────────────···\n`));
+}, 1000 * 60 * 60);
+setInterval(async () => {
+  if (stopped === 'close' || !conn || !conn.user) return;
+  await purgeOldFiles();
+console.log(chalk.cyanBright(`\n▣────────[ AUTO_PURGE_OLDFILES ]───────────···\n│\n▣─❧ ARCHIVOS ELIMINADOS ✅\n│\n▣────────────────────────────────────···\n`));
+}, 1000 * 60 * 60);
+setInterval(async () => {
+  if (stopped === 'close' || !conn || !conn.user) return;
+  const _uptime = process.uptime() * 1000;
+  const uptime = clockString(_uptime);
+  const bio = `Runa Bot 🈴 | Creador: 𝖣aniel 🇦🇱 | ⌛𝖳𝗂𝖾𝗆𝗉𝗈 𝖠𝖼𝗍𝗂𝗏𝖺: ${uptime}`;
+  await conn.updateProfileStatus(bio).catch((_) => _);
+}, 60000);
+function clockString(ms) {
+  const d = isNaN(ms) ? '--' : Math.floor(ms / 86400000);
+  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24;
+  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+  return [d, 'd ️', h, 'h ', m, 'm ', s, 's '].map((v) => v.toString().padStart(2, 0)).join('');
+}
+_quickTest().catch(console.error);
 
 
 
